@@ -22,6 +22,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
     @stack('styles')
@@ -68,7 +69,7 @@
                         <li>
                             <a href="{{ route('cart.index') }}">
                                 Cart 
-                                @if(session('cart'))
+                                @if(session('cart') && count(session('cart')) > 0)
                                     <span class="cart-count">({{ count(session('cart')) }})</span>
                                 @endif
                             </a>
@@ -83,19 +84,28 @@
                             </svg>
                             +92 325 454 5589
                         </a>
-                    </div> <!-- end header-contact -->
-                </nav> <!-- end header-nav -->         
+                    </div> 
+                </nav>         
             
-            </div> <!-- end s-header__content -->
-        </header> <!-- end s-header -->
-
-        <!-- Main Content -->
+            </div>
+        </header> 
         <main>
             @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: "{{ session('success') }}",
+                        showConfirmButton: true,
+                        timer: 2500,
+                        timerProgressBar: true
+                    });
+                });
+            </script>
+        @endif
+        
+        
 
             @if(session('error'))
                 <div class="alert alert-error">
@@ -182,13 +192,13 @@
                         </ul> 
                     </div>
                     
-                    <div class="grid-cols__column footer-block">                   
+                    {{-- <div class="grid-cols__column footer-block">                   
                         <h6>Opening Hours</h6>
                         <ul class="opening-hours">
                             <li><span class="opening-hours__days">Weekdays</span><span class="opening-hours__time">9:00am - 8:00pm</span></li>
                             <li><span class="opening-hours__days">Weekends</span><span class="opening-hours__time">10:00am - 6:00pm</span></li>
                         </ul> 
-                    </div>  
+                    </div>   --}}
 
                 </div> <!-- s-footer__main-end -->                  
 
@@ -198,8 +208,8 @@
                 
                 <div class="column xl-6 lg-12">
                     <p class="ss-copyright">
-                        <span>© Glowlin 2025</span> 
-                        <span>Organic Skincare for Pakistani Beauty</span>
+                        <span>© Organixa</span> 
+                        <span>@yield('year', date('Y'))</span>
                     </p>
                 </div>
 

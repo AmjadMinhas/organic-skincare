@@ -43,13 +43,14 @@ class CheckoutController extends Controller
 
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
             'address' => 'required|string',
             'save_details' => 'boolean',
-            'password' => 'required_if:save_details,true|min:8'
+            // 'password' => 'required_if:save_details,true|min:8'
         ]);
 
         $cart = session()->get('cart', []);

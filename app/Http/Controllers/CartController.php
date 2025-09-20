@@ -43,6 +43,20 @@ class CartController extends Controller
 
         session()->put('cart', $cart);
         
+        // Return JSON response for AJAX requests
+        if ($request->ajax() || $request->wantsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Product added to cart successfully!',
+                'cartCount' => count($cart),
+                'product' => [
+                    'id' => $product->id,
+                    'name' => $product->title,
+                    'price' => $product->formatted_price
+                ]
+            ]);
+        }
+        
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 

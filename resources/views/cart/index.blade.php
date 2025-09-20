@@ -10,9 +10,9 @@
     <div class="row s-menu__content">
         
         <div class="column xl-12">
-            <div class="section-header" data-num="01">
+            {{-- <div class="section-header" data-num="01"> --}}
                 <h2 class="text-display-title">Shopping Cart</h2>
-            </div>
+            {{-- </div> --}}
         </div>
 
         <div class="column xl-12">
@@ -285,17 +285,17 @@
 .empty-cart {
     text-align: center;
     padding: 4rem 2rem;
-    color: #666;
+    color: var(--color-headings);
 }
 
 .empty-cart-icon {
     margin-bottom: 1rem;
-    color: #ddd;
+    color: var(--color-headings);
 }
 
 .empty-cart h3 {
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--color-headings);
 }
 
 .empty-cart p {
