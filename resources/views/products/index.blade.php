@@ -74,7 +74,7 @@
 
 @push('styles')
 <style>
-    /* Enhanced Glassmorphism Product Cards for Dark Background */
+    /* Organic Skincare Theme Product Cards */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -85,15 +85,13 @@
 
 .product-item {
     position: relative;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, #fefcf9 0%, #faf8f5 100%);
+    border: 1px solid rgba(184, 148, 110, 0.2);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+        0 8px 32px rgba(184, 148, 110, 0.15),
+        0 0 0 1px rgba(184, 148, 110, 0.05) inset;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
     transform-style: preserve-3d;
 }
@@ -105,7 +103,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(74, 156, 107, 0.4), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -117,10 +115,10 @@
 .product-item:hover {
     transform: translateY(-8px) rotateX(5deg);
     box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-        0 0 100px rgba(44, 85, 48, 0.2);
-    border-color: rgba(255, 255, 255, 0.25);
+        0 20px 60px rgba(184, 148, 110, 0.25),
+        0 0 0 1px rgba(74, 156, 107, 0.2) inset,
+        0 0 100px rgba(74, 156, 107, 0.15);
+    border-color: rgba(74, 156, 107, 0.3);
 }
 
 .product-image {
@@ -173,36 +171,36 @@
 
 .product-info h3 {
     margin-bottom: 0.8rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #3a291d;
     font-size: 1.3rem;
     font-weight: 600;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(58, 41, 29, 0.1);
     transition: color 0.3s ease;
 }
 
 .product-item:hover .product-info h3 {
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(44, 85, 48, 0.5);
+    color: #4a9c6b;
+    text-shadow: 0 0 20px rgba(74, 156, 107, 0.3);
 }
 
 .product-info p {
-    color: rgba(255, 255, 255, 0.7);
+    color: #6e503a;
     margin-bottom: 1.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 3px rgba(110, 80, 58, 0.1);
 }
 
 .product-price {
     font-size: 1.4rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #4ade80, #22c55e, #16a34a);
+    background: linear-gradient(135deg, #4a9c6b, #3d7f56, #336247);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    text-shadow: 0 0 30px rgba(74, 156, 107, 0.2);
+    filter: drop-shadow(0 2px 4px rgba(58, 41, 29, 0.1));
 }
 
 .product-actions {
@@ -230,12 +228,12 @@
 }
 
 .btn--primary {
-    background: linear-gradient(135deg, rgba(44, 85, 48, 0.9), rgba(34, 68, 38, 0.9));
+    background: linear-gradient(135deg, #4a9c6b, #3d7f56);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(74, 156, 107, 0.3);
     box-shadow: 
-        0 4px 15px rgba(44, 85, 48, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        0 4px 15px rgba(74, 156, 107, 0.3),
+        0 0 0 1px rgba(74, 156, 107, 0.1) inset;
 }
 
 .btn--primary::before {
@@ -256,49 +254,49 @@
 .btn--primary:hover {
     transform: translateY(-2px);
     box-shadow: 
-        0 8px 25px rgba(44, 85, 48, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
-    background: linear-gradient(135deg, rgba(44, 85, 48, 1), rgba(34, 68, 38, 1));
+        0 8px 25px rgba(74, 156, 107, 0.4),
+        0 0 0 1px rgba(74, 156, 107, 0.2) inset;
+    background: linear-gradient(135deg, #3d7f56, #336247);
 }
 
 .btn--secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(184, 148, 110, 0.1);
+    color: #6e503a;
+    border: 1px solid rgba(184, 148, 110, 0.3);
     backdrop-filter: blur(10px);
     box-shadow: 
-        0 4px 15px rgba(0, 0, 0, 0.2),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+        0 4px 15px rgba(184, 148, 110, 0.2),
+        0 0 0 1px rgba(184, 148, 110, 0.05) inset;
 }
 
 .btn--secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-    color: white;
+    background: rgba(184, 148, 110, 0.15);
+    border-color: rgba(184, 148, 110, 0.4);
+    color: #3a291d;
     transform: translateY(-2px);
     box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        0 8px 25px rgba(184, 148, 110, 0.3),
+        0 0 0 1px rgba(184, 148, 110, 0.1) inset;
 }
 
 .no-products {
     text-align: center;
     padding: 4rem 2rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, #fefcf9 0%, #faf8f5 100%);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(184, 148, 110, 0.2);
     margin: 2rem 0;
 }
 
 .no-products h3 {
-    color: rgba(255, 255, 255, 0.9);
+    color: #3a291d;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .no-products p {
-    color: rgba(255, 255, 255, 0.7);
+    color: #6e503a;
     margin-bottom: 2rem;
 }
 

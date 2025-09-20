@@ -105,67 +105,64 @@
  * ## colors
  * ------------------------------------------------------------------- */
 :root {
-  /* theme colors
-   * generated using 
-   * Tailwind CSS Color Generator
-   * (https://uicolors.app/generate/)
+  /* theme colors - Organic Skincare Theme
+   * Natural Green & Muddy Brown combination
+   * Based on GLOWLIN product image reference
    * 
-   * color-1 (#C73E1D)
-   * color-2 (#D1C1B3)
+   * color-1: Natural Green (#4a9c6b)
+   * color-2: Muddy Brown (#b8946e)
    */
-    --color-1-50                  : #f4f9f7;
-    --color-1-100                 : #daede5;
-    --color-1-200                 : #b5dacb;
-    --color-1-300                 : #89bfac;
-    --color-1-400                 : #65a48f;
-    --color-1-500                 : #468672;
-    --color-1-600                 : #366b5b;
-    --color-1-700                 : #2e574a;
-    --color-1-800                 : #29463f;
-    --color-1-900                 : #253c35;
-    --color-1-950                 : #11221d;
+    --color-1-50                  : #f0f8f4;
+    --color-1-100                 : #d9f0e3;
+    --color-1-200                 : #b3e0c7;
+    --color-1-300                 : #8dd0ab;
+    --color-1-400                 : #67c08f;
+    --color-1-500                 : #4a9c6b;
+    --color-1-600                 : #3d7f56;
+    --color-1-700                 : #336247;
+    --color-1-800                 : #2a4f38;
+    --color-1-900                 : #223c2a;
+    --color-1-950                 : #1a2f1f;
     --color-1                     : var(--color-1-500);
 
-    --color-2-50                  : #f9f7f3;
-    --color-2-100                 : #f2ede2;
-    --color-2-200                 : #e3d8c5;
-    --color-2-300                 : #d2be9f;
-    --color-2-400                 : #c2a480;
-    --color-2-500                 : #b1885e;
-    --color-2-600                 : #a47652;
-    --color-2-700                 : #885f46;
-    --color-2-800                 : #6f4f3d;
-    --color-2-900                 : #5a4134;
-    --color-2-950                 : #30211a;
+    --color-2-50                  : #faf8f5;
+    --color-2-100                 : #f2ede6;
+    --color-2-200                 : #e5d9cc;
+    --color-2-300                 : #d7c4b0;
+    --color-2-400                 : #c9af94;
+    --color-2-500                 : #b8946e;
+    --color-2-600                 : #a67d5c;
+    --color-2-700                 : #8a6549;
+    --color-2-800                 : #6e503a;
+    --color-2-900                 : #523c2b;
+    --color-2-950                 : #3a291d;
     --color-2                     : var(--color-2-500);
 
-  /* neutrals
-   * generated using 
-   * Tint & Shade Generator 
-   * (https://maketintsandshades.com/)
+  /* neutrals - Beige tones for organic skincare theme
+   * Light beige to warm brown spectrum
    */
-    --color-neutral-50            : #efefef;
-    --color-neutral-100           : #dfe0e0;
-    --color-neutral-150           : #cfd0d0;
-    --color-neutral-200           : #bfc1c0;
-    --color-neutral-250           : #afb1b1;
-    --color-neutral-300           : #9fa1a1;
-    --color-neutral-350           : #8f9291;
-    --color-neutral-400           : #7f8281;
-    --color-neutral-450           : #6f7372;
-    --color-neutral-500           : #5f6362;
-    --color-neutral-550           : #565958;
-    --color-neutral-600           : #4c4f4e;
-    --color-neutral-650           : #434545;
-    --color-neutral-700           : #393b3b;
-    --color-neutral-750           : #303231;
-    --color-neutral-800           : #262827;
-    --color-neutral-850           : #1c1e1d;
-    --color-neutral-900           : #131414;
-    --color-neutral-950           : #090a0a;
+    --color-neutral-50            : #fefcf9;
+    --color-neutral-100           : #fdf8f2;
+    --color-neutral-150           : #fbf2e8;
+    --color-neutral-200           : #3a1f17;
+    --color-neutral-250           : #f5e6d4;
+    --color-neutral-300           : #f2e0ca;
+    --color-neutral-350           : #efdac0;
+    --color-neutral-400           : #ecd4b6;
+    --color-neutral-450           : #e9ceac;
+    --color-neutral-500           : #e6c8a2;
+    --color-neutral-550           : #d4b592;
+    --color-neutral-600           : #c2a282;
+    --color-neutral-650           : #b08f72;
+    --color-neutral-700           : #9e7c62;
+    --color-neutral-750           : #8c6952;
+    --color-neutral-800           : #7a5642;
+    --color-neutral-850           : #684332;
+    --color-neutral-900           : #563022;
+    --color-neutral-950           : #3a1f17;
     --color-neutral               : var(--color-neutral-500);
 
-    --color-white                 : var(--color-neutral-50);
+    --color-white                 : rgb(237,233,208);
     --color-black                 : var(--color-neutral-950);
     --color-pure-white            : #ffffff;
     --color-pure-black            : #000000;
@@ -210,8 +207,8 @@
    */
     --color-text                  : var(--color-neutral-200);
     --color-text-bold             : var(--color-neutral-50);
-    --color-text-light            : var(--color-neutral-500);
-    --color-headings              : var(--color-neutral-100);
+    --color-text-light            : var(--color-neutral-700);
+    --color-headings              : var(--color-neutral-950);
     --color-placeholder           : var(--color-neutral-500);
 
   /* link
@@ -1507,6 +1504,7 @@ body {
     font-weight: var(--type-weight-body);
     line-height: var(--type-line-height-body);
     color      : var(--color-text);
+    background : rgb(237,233,208);
 }
 
 /* links
@@ -3327,7 +3325,7 @@ td:last-child {
 }
 
 .header-nav__links .current a {
-    color: var(--color-white);
+    color: var(--color-text);
 }
 
 /* header contact num

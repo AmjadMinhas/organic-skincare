@@ -5,7 +5,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Organic Skincare - Glowlin')</title>
+    <title>@yield('title', 'GLOWLIN - Organic Skincare')</title>
 
     <script>
         document.documentElement.classList.remove('no-js');
@@ -76,12 +76,12 @@
                     </ul> <!-- end header-nav__links -->  
                     
                     <div class="header-contact">
-                        <a href="tel:+923001234567" class="header-contact__num btn">
+                        <a href="tel:+9234545589" class="header-contact__num btn">
                             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="24" height="24" color="#000000">
                                 <defs><style>.cls-6376396cc3a86d32eae6f0dc-1{fill:none;stroke:currentColor;stroke-miterlimit:10;}</style></defs>
                                 <path class="cls-6376396cc3a86d32eae6f0dc-1" d="M19.64,21.25c-2.54,2.55-8.38.83-13-3.84S.2,6.9,2.75,4.36L5.53,1.57,10.9,6.94l-2,2A2.18,2.18,0,0,0,8.9,12L12,15.1a2.18,2.18,0,0,0,3.07,0l2-2,5.37,5.37Z"></path>
                             </svg>
-                            +92 300 123 4567
+                            +92 325 454 5589
                         </a>
                     </div> <!-- end header-contact -->
                 </nav> <!-- end header-nav -->         
@@ -178,7 +178,7 @@
                         <h6>Contacts</h6>
                         <ul class="link-list">
                             <li><a href="mailto:info@glowlin.pk">info@glowlin.pk</a></li>
-                            <li><a href="tel:+923001234567">+92 300 123 4567</a></li>
+                            <li><a href="tel:+923254545589">+92 325 454 5589</a></li>
                         </ul> 
                     </div>
                     

@@ -12,8 +12,8 @@
         <div class="intro-header">
             <div class="intro-header__overline">Welcome to</div>
             <h1 class="intro-header__big-type">
-                Glowlin <br>
-                Organic Skincare
+                {{-- <br> --}}
+                Organixa Skincare
             </h1>
         </div> <!-- end intro-header -->
 
@@ -33,9 +33,58 @@
             
         <div class="intro-block-content">
 
-            <figure class="intro-block-content__pic">
-                <img src="{{ asset('assets/images/intro-pic-secondary.jpg') }}" alt="Organic Skincare">
-            </figure> <!-- end intro-pic-secondary -->   
+            <div class="aesthetic-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="{{ asset('assets/images/intro-pic-secondary.jpg') }}" alt="Organic Skincare - Natural Beauty">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <h3>Natural Beauty</h3>
+                                    <p>Embrace your natural glow</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="{{ asset('assets/images/about-pic-primary.jpg') }}" alt="Organic Ingredients">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <h3>Pure Ingredients</h3>
+                                    <p>Sourced from nature's finest</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="{{ asset('assets/images/intro-pic-primary.jpg') }}" alt="Glowing Skin">
+                            <div class="slide-overlay">
+                                <div class="slide-content">
+                                    <h3>Radiant Results</h3>
+                                    <p>Transform your skincare routine</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Dots -->
+                    <div class="carousel-dots">
+                        <button class="dot active" data-slide="0"></button>
+                        <button class="dot" data-slide="1"></button>
+                        <button class="dot" data-slide="2"></button>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-arrow prev" aria-label="Previous slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-arrow next" aria-label="Next slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
             <div class="intro-block-content__text-wrap">
                 <p class="intro-block-content__text">
@@ -248,3 +297,438 @@
 
 </section> <!-- end s-testimonials --> 
 @endsection
+
+@push('styles')
+<style>
+/* Aesthetic Carousel Styles */
+.aesthetic-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(74, 156, 107, 0.15),
+        0 8px 32px rgba(184, 148, 110, 0.1);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #f0f8f4 0%, #faf8f5 100%);
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    z-index: 2;
+}
+
+.carousel-slide.prev {
+    opacity: 0.7;
+    transform: translateX(-100px) scale(0.9);
+    z-index: 1;
+}
+
+.carousel-slide.next {
+    opacity: 0.7;
+    transform: translateX(100px) scale(0.9);
+    z-index: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: brightness(1.1) contrast(1.05);
+}
+
+.carousel-slide:hover img {
+    transform: scale(1.05);
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        transparent 0%, 
+        rgba(58, 41, 29, 0.3) 40%, 
+        rgba(58, 41, 29, 0.8) 100%
+    );
+    padding: 3rem 2rem 2rem;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-slide.active .slide-overlay {
+    transform: translateY(0);
+}
+
+.slide-content h3 {
+    color: #fefcf9;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Playfair Display', serif;
+}
+
+.slide-content p {
+    color: rgba(254, 252, 249, 0.9);
+    font-size: 0.95rem;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Dots - Organic Theme */
+.carousel-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 16px;
+    z-index: 10;
+    background: rgba(254, 252, 249, 0.15);
+    backdrop-filter: blur(20px);
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(254, 252, 249, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(58, 41, 29, 0.15),
+        0 0 0 1px rgba(74, 156, 107, 0.1) inset;
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(254, 252, 249, 0.4);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #b8946e, #a67d5c);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(254, 252, 249, 0.6);
+    transform: scale(1.15);
+    box-shadow: 
+        0 4px 16px rgba(184, 148, 110, 0.3),
+        0 0 0 2px rgba(184, 148, 110, 0.2);
+}
+
+.dot:hover::before {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.dot.active {
+    background: linear-gradient(135deg, #4a9c6b, #3d7f56);
+    transform: scale(1.2);
+    box-shadow: 
+        0 0 0 3px rgba(74, 156, 107, 0.3),
+        0 6px 20px rgba(74, 156, 107, 0.4),
+        0 0 0 1px rgba(254, 252, 249, 0.2) inset;
+}
+
+.dot.active::before {
+    background: rgba(254, 252, 249, 0.9);
+    opacity: 1;
+    width: 6px;
+    height: 6px;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 8px rgba(254, 252, 249, 0.5);
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(254, 252, 249, 0.9);
+    color: #3a1f17;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 24px rgba(58, 41, 29, 0.15),
+        0 0 0 1px rgba(74, 156, 107, 0.1) inset;
+    z-index: 10;
+}
+
+.carousel-arrow:hover {
+    background: linear-gradient(135deg, #4a9c6b, #3d7f56);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 
+        0 12px 32px rgba(74, 156, 107, 0.3),
+        0 0 0 1px rgba(74, 156, 107, 0.2) inset;
+}
+
+.carousel-arrow.prev {
+    left: 20px;
+}
+
+.carousel-arrow.next {
+    right: 20px;
+}
+
+.carousel-arrow svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Auto-play indicator */
+.carousel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4a9c6b 0%, #4a9c6b 0%);
+    z-index: 10;
+    animation: autoplayProgress 5s linear infinite;
+}
+
+@keyframes autoplayProgress {
+    0% { background: linear-gradient(90deg, #4a9c6b 0%, transparent 0%); }
+    100% { background: linear-gradient(90deg, #4a9c6b 100%, transparent 100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .aesthetic-carousel {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
+    
+    .carousel-container {
+        height: 300px;
+        border-radius: 16px;
+    }
+    
+    .carousel-slide {
+        border-radius: 16px;
+    }
+    
+    .slide-overlay {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    
+    .slide-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-arrow.prev {
+        left: 15px;
+    }
+    
+    .carousel-arrow.next {
+        right: 15px;
+    }
+}
+
+/* Smooth entrance animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aesthetic-carousel {
+    animation: slideIn 1s ease-out;
+}
+</style>
+@endpush
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.aesthetic-carousel');
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.dot');
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoplayInterval;
+    
+    // Initialize carousel
+    function init() {
+        updateCarousel();
+        startAutoplay();
+        
+        // Add event listeners
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoplay();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoplay();
+        });
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+                resetAutoplay();
+            });
+        });
+        
+        // Pause on hover
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+        
+        // Touch/swipe support
+        let startX = 0;
+        let isDragging = false;
+        
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            stopAutoplay();
+        });
+        
+        carousel.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+        
+        carousel.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+            
+            startAutoplay();
+        });
+    }
+    
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev', 'next');
+            
+            if (index === currentSlide) {
+                slide.classList.add('active');
+            } else if (index === currentSlide - 1 || (currentSlide === 0 && index === totalSlides - 1)) {
+                slide.classList.add('prev');
+            } else if (index === currentSlide + 1 || (currentSlide === totalSlides - 1 && index === 0)) {
+                slide.classList.add('next');
+            }
+        });
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+    
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+    
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+    
+    // Initialize the carousel
+    init();
+});
+</script>
+@endpush

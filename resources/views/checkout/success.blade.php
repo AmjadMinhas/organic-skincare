@@ -118,7 +118,7 @@
                     <h4>Need Help?</h4>
                     <p>If you have any questions about your order, please contact us:</p>
                     <div class="contact-details">
-                        <p><strong>Phone:</strong> +92 300 123 4567</p>
+                        <p><strong>Phone:</strong> +92 325 454 5589</p>
                         <p><strong>Email:</strong> info@glowlin.pk</p>
                     </div>
                 </div>
