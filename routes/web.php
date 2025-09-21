@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VisitorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -42,3 +43,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
     Route::put('orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.updateStatus');
 });
+
+
+//log visitor 
+Route::post('/visitor-location', [VisitorController::class, 'updateLocation'])
+    ->name('visitor.location');
